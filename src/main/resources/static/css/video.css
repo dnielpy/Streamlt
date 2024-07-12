@@ -27,6 +27,10 @@
   margin: 10px; /* Margen alrededor del botón */
   text-decoration: none; /* Elimina el subrayado del enlace */
   text-align: center; /* Centra el texto dentro del botón */
+
+  border-radius: 12px;
+  box-shadow: 0 0 10px 0 #7d1212;
+  border: 0px;
 }
 
 body {
@@ -37,5 +41,5 @@ body {
 
 /* Agrega espacio entre los elementos de la lista */
 .videos-list li {
-  margin-bottom: 40px; /* Espacio inferior entre los elementos */
+    margin-bottom: 40px; /* Espacio inferior entre los elementos */
 }
