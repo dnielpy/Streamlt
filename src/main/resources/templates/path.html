@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Streamlt</title>
+    <link rel="icon" type="image/png" href="/img/icon.png">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+<div class="card">
+    <div class="image-box">
+        <img class="img" src="/img/logo.png">
+    </div>
+    <h3 class="h3">
+        Streamlt
+    </h3>
+    <div class="text-box">
+        <ol class="text">
+            <li>Enter the path to the folder containing your videos</li>
+            <li>Disable your VPN or Firewall</li>
+            <li>Copy your IP address: [[${serverIp}]]</li>
+            <li>Paste this IP address into the web browser of any device connected to your router</li>
+        </ol>
+    </div>
+    <form action="/path" method="post" class="path-form">
+        <input type="text" name="path" class="path-input" placeholder="Enter path here">
+        <button type="submit" class="submit-button">Set Path</button>
+    </form>
+</div>
+
+</body>
+</html>

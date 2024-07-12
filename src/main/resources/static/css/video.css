@@ -1,0 +1,41 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%; /* Ocupa todo el ancho de la pantalla */
+  height: auto; /* Se ajusta automáticamente a la altura del contenido */
+  justify-content: center; /* Centra los elementos en el eje vertical */
+}
+
+.home-server-title {
+  margin-bottom: 20px; /* Espacio entre el título y la lista */
+}
+
+.videos-list {
+  width: 80%; /* Ajusta el ancho de la lista de videos */
+  max-width: 800px; /* Límite máximo de ancho */
+  display: flex; /* Hace que los elementos de la lista se muestren en línea */
+  flex-direction: column; /* Los elementos se apilan verticalmente */
+  align-items: center; /* Centra los elementos en el eje horizontal */
+  justify-content: center; /* Centra la lista de videos en el eje vertical */
+}
+
+.video-button-home-server {
+  background-color: red; /* Color de fondo del botón */
+  color: white; /* Color del texto del botón */
+  padding: 15px 25px; /* Relleno del botón */
+  margin: 10px; /* Margen alrededor del botón */
+  text-decoration: none; /* Elimina el subrayado del enlace */
+  text-align: center; /* Centra el texto dentro del botón */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
+}
+
+/* Agrega espacio entre los elementos de la lista */
+.videos-list li {
+  margin-bottom: 40px; /* Espacio inferior entre los elementos */
+}
