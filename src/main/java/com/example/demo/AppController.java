@@ -42,12 +42,12 @@ public class AppController {
     }
 
     @PostMapping("/path")
-    public ResponseEntity<String> setPath(@RequestBody String path) {
+    public String setPath(@RequestBody String path) {
         path = URLDecoder.decode(path, StandardCharsets.UTF_8);
         path = path.replace("\\", "/");
         path = path.replace("path=", "");
         service.setPath(path);
-        return ResponseEntity.ok().body("Path set successfully");
+        return home();
     }
 
     @GetMapping("/")
