@@ -111,3 +111,20 @@ footer a {
 footer a:hover {
     color: #ddd;
 }
+
+.video-title {
+    text-align: center; /* Centra el texto */
+    color: #fff; /* Color del texto */
+    font-size: 20px; /* Tamaño del texto */
+    margin-bottom: 10px; /* Espacio entre el título y el video */
+}
+
+.video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.videos-list ul {
+    list-style-type: none; /* Quita los puntos de la lista */
+}

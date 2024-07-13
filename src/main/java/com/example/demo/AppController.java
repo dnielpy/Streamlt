@@ -2,7 +2,6 @@ package com.example.demo;
 
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -59,14 +58,14 @@ public class AppController {
     }
 
     @GetMapping("/video")
-    public ResponseEntity<Resource> downloadVideo(@RequestParam String path) {
+    public ResponseEntity<Resource> streamVideo(@RequestParam String path) {
         try {
             String decodedPath = URLDecoder.decode(path, StandardCharsets.UTF_8);
             Path videoPath = Paths.get(decodedPath);
             Resource video = new UrlResource(videoPath.toUri());
             String mimeType = Files.probeContentType(videoPath);
 
-            return ResponseEntity.ok().contentType(MediaType.parseMediaType(mimeType)).header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + video.getFilename() + "\"").body(video);
+            return ResponseEntity.ok().contentType(MediaType.parseMediaType(mimeType)).body(video);
         } catch (IOException e) {
             return ResponseEntity.badRequest().build();
         }
@@ -74,6 +73,10 @@ public class AppController {
 
     @GetMapping("/videos")
     public String getVideos(Model model) {
+        if (service.getPath() == null) {
+            return home();
+        }
+        
         List<Path> videoFiles = service.getVideoFiles();
         List<VideoFile> videoFilesInfo = new ArrayList<>();
         for (Path videoPath : videoFiles) {
