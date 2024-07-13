@@ -128,3 +128,16 @@ footer a:hover {
 .videos-list ul {
     list-style-type: none; /* Quita los puntos de la lista */
 }
+.home-server-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    width: 170px; /* Ajusta el tamaño del logo */
+    height: auto; /* Mantiene la proporción del logo */
+    border-radius: 100%;
+    box-shadow: 0 0 40px 0 #7d1212;
+    margin-top: 10px;
+}
