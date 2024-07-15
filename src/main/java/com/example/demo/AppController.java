@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.view.RedirectView;
 
 import java.io.IOException;
 import java.net.SocketException;
@@ -41,7 +42,7 @@ public class AppController {
     }
 
     @PostMapping("/path")
-    public String setPath(@RequestBody String path) {
+    public Object setPath(@RequestBody String path) {
         path = URLDecoder.decode(path, StandardCharsets.UTF_8);
         path = path.replace("\\", "/");
         path = path.replace("path=", "");
@@ -50,9 +51,9 @@ public class AppController {
     }
 
     @GetMapping("/")
-    public String home() {
+    public Object home() {
         if (service.getPath() == null) {
-            return "path";
+            return new RedirectView("/path");
         }
         return "index";
     }
@@ -72,7 +73,7 @@ public class AppController {
     }
 
     @GetMapping("/videos")
-    public String getVideos(Model model) {
+    public Object getVideos(Model model) {
         if (service.getPath() == null) {
             return home();
         }
